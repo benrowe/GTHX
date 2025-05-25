@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go + HTMX Example</title>
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <link rel="stylesheet" href="/assets/css/output.css">
+</head>
+<body>
+
+    <h1 class="text-3xl font-bold underline">
+        Hello world!
+      </h1>
+<h1 class="text-3xl">HTMX + Go Example</h1>
+
+
+<!-- HTMX example: load time -->
+<div id="time" hx-get="/time" hx-trigger="load, every 2s">
+    Loading time...
+</div>
+
+<!-- HTMX example: button click -->
+<button hx-get="/time" hx-target="#time" class="bg-blue-500">Click Me</button>
+
+</body>
+</html>
