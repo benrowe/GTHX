@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"net/http"
 	"time"
 )
@@ -9,7 +10,7 @@ import (
 func logRequest(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		// Log the request details
-		fmt.Printf("[%s] %s %s\n", time.Now().Format(time.RFC3339), r.Method, r.URL.Path)
+		log.Printf("%s %s\n", r.Method, r.URL.Path)
 
 		// Call the next handler
 		next.ServeHTTP(w, r)
@@ -28,6 +29,7 @@ func main() {
 	mux.Handle("/assets/", assetsHandler)
 
 	mux.HandleFunc("/time", func(w http.ResponseWriter, r *http.Request) {
+		time.Sleep(time.Millisecond * 500)
 		currentTime := time.Now().Format(time.RFC3339Nano)
 		fmt.Fprintf(w, "Current time: %s", currentTime)
 	})
