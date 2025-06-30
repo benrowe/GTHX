@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    # working_dir value has to be the same of mapped volume
+    working_dir: /app
+    ports:
+      - 8081:1234
+    volumes:
+      - .:/app
+    restart: unless-stopped
