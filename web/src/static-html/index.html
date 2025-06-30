@@ -22,6 +22,10 @@
         <!-- HTMX example: button click -->
         <button hx-get="/time" hx-target="#time" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4">Click Me</button>
     </div>
+    <script>
+        document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+            ':35729/livereload.js?snipver=1"></' + 'script>')
+    </script>
 
 </body>
 </html>
