@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,21 +7,21 @@
     <script src="https://unpkg.com/htmx.org@2.0.4"></script>
     <link rel="stylesheet" href="/assets/css/output.css">
 </head>
-<body>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold underline">
+            Hello world!
+          </h1>
+        <h1 class="text-3xl">HTMX + Go Example</h1>
 
-    <h1 class="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-<h1 class="text-3xl">HTMX + Go Example</h1>
+        <!-- HTMX example: load time -->
+        <div id="time" hx-get="/time" hx-trigger="load, every 2s" class="bg-white p-4 rounded-lg shadow-lg">
+            Loading time...
+        </div>
 
-
-<!-- HTMX example: load time -->
-<div id="time" hx-get="/time" hx-trigger="load, every 2s">
-    Loading time...
-</div>
-
-<!-- HTMX example: button click -->
-<button hx-get="/time" hx-target="#time" class="bg-blue-500">Click Me</button>
+        <!-- HTMX example: button click -->
+        <button hx-get="/time" hx-target="#time" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 mt-4">Click Me</button>
+    </div>
 
 </body>
 </html>
