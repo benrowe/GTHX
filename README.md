@@ -12,6 +12,7 @@ It provides:
   * workspace (no need for golang to be installed locally)
   * Live reload for web app
 * Production ready docker image
+* pages & components loaded via storyblok
 
 The webserver contains the ability to serve HTML content, containing HTMX and tailwind for behavior and styling.
 
